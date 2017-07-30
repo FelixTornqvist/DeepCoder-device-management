@@ -10,8 +10,15 @@ exec_test() {
         bash -c "/usr/bin/time -f '%U'\
             timeout ${timeout_time} \
             $(dirname $0)/gen_program.sh ${model} ${example_dir}/$1-example ${max_length} $2" \
-            2>&1 > /dev/null \
-        || echo ${timeout_time}
+            2>&1 > /dev/null
+        result=$?
+        if [ $result -eq 124 ]
+        then
+            echo ${timeout_time}
+        elif [ $result -ne 0 ]
+        then
+            echo "timeout"
+        fi
     ) | tail -1
 }
 
@@ -27,7 +34,7 @@ do_test() {
             echo "Id(${id})-${index}: DFS ${time_dfs}"
             time_none=$(exec_test $index none)
             echo "Id(${id})-${index}: None ${time_none}"
-            echo ${index} ${time_none} ${time_dfs} 2>> $(dirname $0)/result-${id}
+            echo ${index} ${time_none} ${time_dfs} >> $(dirname $0)/result-${id}
             echo "Id(${id})-${index}: Finish"
         else
             break
