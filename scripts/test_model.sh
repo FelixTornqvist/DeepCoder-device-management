@@ -22,10 +22,13 @@ do_test() {
     do
         if [ -e "${example_dir}/${index}-example" ]
         then
-            time_sae=$(exec_test $index)
+            echo "Id(${id})-${index}: Start"
             time_dfs=$(exec_test $index dfs)
+            echo "Id(${id})-${index}: DFS ${time_dfs}"
             time_none=$(exec_test $index none)
-            echo ${index} ${time_none} ${time_dfs} ${time_sae} >> $(dirname $0)/result-${id}
+            echo "Id(${id})-${index}: None ${time_none}"
+            echo ${index} ${time_none} ${time_dfs} 2>> $(dirname $0)/result-${id}
+            echo "Id(${id})-${index}: Finish"
         else
             break
         fi
@@ -33,7 +36,7 @@ do_test() {
     done
 }
 
-for i in $(seq 0 $((${parallel_num} - 1)))
+for i in $(seq 1 ${parallel_num})
 do
     do_test $i &
 done
