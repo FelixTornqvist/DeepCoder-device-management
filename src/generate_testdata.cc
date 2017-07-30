@@ -1,12 +1,12 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <random>
 #include <algorithm>
 #include <string>
 #include <tuple>
 #include "dsl/utils.h"
 #include "dataset-generator.h"
-#include "random-enumerator.h"
 #include "attribute.h"
 
 using namespace std;
@@ -77,110 +77,90 @@ int main(int argc, char **argv) {
     functions.erase(find(functions.begin(), functions.end(), Function::ReadInt));
     functions.erase(find(functions.begin(), functions.end(), Function::ReadList));
 
-    // Enumerate read_{list, int}
-    Restriction r_for_read;
-    r_for_read.functions = { Function::ReadInt, Function::ReadList };
+    // Generate dataset
+    cerr << "Generate Dataset " << max_length << " " << pow(31, max_length) << endl;
+    auto dataset_opt = generate_dataset(1, max_length, (size_t) pow(31, max_length), EXAMPLE_NUM);
+    if (!dataset_opt) {
+        return 1;
+    }
 
-    Restriction r;
-    r.functions = functions;
-    r.predicates = all_predicate_lambdas;
-    r.one_argument_lambda = all_one_argument_lambdas;
-    r.two_arguments_lambda = all_two_arguments_lambdas;
+    cerr << "Extract examples" << endl;
+    auto dataset = dataset_opt.value();
 
-    vector<tuple<Program, vector<Example>>> programs;
-    programs.reserve(dataset_per_length * max_length);
-    for (auto i = 1; i <= max_length; i++) {
-        r_for_read.min_length = 1;
-        r_for_read.max_length = i;
-        r.min_length = i;
-        r.max_length = i;
-        while (programs.size() < dataset_per_length * i) {
-            auto read = generate_random_program(r_for_read);
-            if (read) {
-                auto tenv = generate_type_environment(read.value());
-                if (tenv) {
-                    auto p = generate_random_program(r, read.value(), tenv.value());
-                    if (p && !has_unused_variable(p.value())) {
-                        auto examples = generate_examples(p.value(), EXAMPLE_NUM);
-                        if (examples) {
-                            auto es = examples.value();
-                            programs.push_back(make_tuple(p.value(), es));
-                        }
-                    }
+    vector<int> testdata_num(max_length + 1, 0);
+    for (auto i = 1; i < max_length; i++) {
+        testdata_num[i] = 10;
+    }
+    testdata_num[max_length] = dataset_size - (10 * (max_length - 1));
+
+    vector<vector<pair<Program, vector<Example>>>> testdata(max_length + 1);
+    cerr << dataset.programs.size() << endl;
+    static std::random_device rnd;
+    static std::mt19937 mt(rnd());
+    std::uniform_int_distribution<> examples(0, dataset.programs.size() - 1);
+    while (true) {
+        auto i = examples(mt);
+
+        cerr << "Select : " << i << endl;
+        auto x = dataset.programs.at(i);
+        auto p = x.first;
+        auto e = x.second;
+
+        auto len = 0;
+        for (auto &s: p) {
+            if (s.function == Function::ReadInt || s.function == Function::ReadList) {
+                continue ;
+            }
+            len += 1;
+        }
+
+
+        if (testdata[len].size() < testdata_num[len]) {
+            testdata[len].push_back(x);
+        }
+
+        bool f = true;
+        for (auto j = 0; j < testdata.size(); j++) {
+            if (testdata.at(j).size() < testdata_num.at(j)) {
+                f = false;
+                break;
+            }
+        }
+        if (f) {
+            break ;
+        }
+    }
+
+    int cnt = 0;
+    for (auto l = 0; l < testdata.size(); l++) {
+        for (auto x: testdata[l]) {
+            auto p = x.first;
+            auto e = x.second;
+            stringstream pfile;
+            pfile << dir << "/" << cnt << "-program";
+            ofstream ofs(pfile.str());
+            ofs << p;
+
+            stringstream efile;
+            efile << dir << "/" << cnt << "-example";
+            ofstream ofs2(efile.str());
+            ofs2 << "[\n";
+            for (auto j = 0; j < e.size(); j++) {
+                ofs2 << "{\"input\":";
+                output_input(ofs2, e[j].input);
+                ofs2<< ",\"output\":";
+                output_value(ofs2, e[j].output);
+                ofs2 << "}";
+                if (j != (e.size() - 1)) {
+                    ofs2 << ",";
                 }
+                ofs2 << "\n";
             }
-        }
-    }
+            ofs2 << "]";
 
-    for (auto i = 0 ; i < programs.size(); i++) {
-        auto &x = programs[i];
-        stringstream pfile;
-        pfile << dir << "/" << i << "-program";
-        ofstream ofs(pfile.str());
-        ofs << get<0>(x);
-
-        stringstream efile;
-        efile << dir << "/" << i << "-example";
-        ofstream ofs2(efile.str());
-        ofs2 << "[\n";
-        auto examples = get<1>(x);
-        for (auto j = 0; j < examples.size(); j++) {
-            ofs2 << "{\"input\":";
-            output_input(ofs2, examples[j].input);
-            ofs2<< ",\"output\":";
-            output_value(ofs2, examples[j].output);
-            ofs2 << "}";
-            if (j != (examples.size() - 1)) {
-                ofs2 << ",";
-            }
-            ofs2 << "\n";
-        }
-        ofs2 << "]";
-    }
-
-    /*
-    cout << "[\n";
-    if (dataset) {
-        auto x = dataset.value();
-        long long int cnt = 0;
-        for (const auto &p: x.programs) {
             cnt += 1;
-            const auto &program = p.first;
-            const auto &examples = p.second;
-            auto attribute = Attribute(program);
-            cerr << "# Program\n" << program << flush;
-            auto pair_num = examples.size() / EXAMPLE_NUM;
-            for (auto j = 0; j < pair_num; ++j) {
-                cout << "{\"examples\":[\n";
-                for (auto k = 0; k < EXAMPLE_NUM; ++k) {
-                    const auto &example = examples.at(j * EXAMPLE_NUM + k);
-
-                    cout << "{\"input\":";
-                    output_input(example.input);
-                    cout << ",\"output\":";
-                    output_value(example.output);
-                    cout << "}";
-                    if (k != EXAMPLE_NUM - 1) {
-                        cout << ",";
-                    }
-                    cout << "\n";
-
-                }
-                cout << "],\n\"attribute\":";
-                output_attribute(attribute);
-
-                cout << "}";
-                if (cnt != x.programs.size() ||
-                    j != pair_num - 1) {
-                    cout << ",";
-                }
-                cout << "\n" << flush;
-            }
         }
-    } else {
-        cerr << "Fail to generate dataset" << endl;
     }
-    cout << "]" << endl;
-     */
+
     return 0;
 }
