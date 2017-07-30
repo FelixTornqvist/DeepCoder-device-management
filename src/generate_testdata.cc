@@ -78,8 +78,8 @@ int main(int argc, char **argv) {
     functions.erase(find(functions.begin(), functions.end(), Function::ReadList));
 
     // Generate dataset
-    cerr << "Generate Dataset " << max_length << " " << pow(31, max_length) << endl;
-    auto dataset_opt = generate_dataset(1, max_length, (size_t) pow(31, max_length), EXAMPLE_NUM);
+    cerr << "Generate Dataset " << max_length << " " << max_length * dataset_size * 5 << endl;
+    auto dataset_opt = generate_random_dataset(1, max_length, max_length * dataset_size * 5, EXAMPLE_NUM);
     if (!dataset_opt) {
         return 1;
     }
@@ -106,6 +106,7 @@ int main(int argc, char **argv) {
         auto p = x.first;
         auto e = x.second;
 
+        cerr << p << endl;
         auto len = 0;
         for (auto &s: p) {
             if (s.function == Function::ReadInt || s.function == Function::ReadList) {
