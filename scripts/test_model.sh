@@ -12,7 +12,6 @@ exec_test() {
             $(dirname $0)/gen_program.sh ${model} ${example_dir}/$1-example ${max_length} $2" \
             2>&1 > /dev/null
         result=$?
-        echo ${result}
         if [ $result -eq 124 ]
         then
             echo ${timeout_time}
