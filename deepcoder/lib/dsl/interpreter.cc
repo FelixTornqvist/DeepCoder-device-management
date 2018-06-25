@@ -315,7 +315,23 @@ namespace dsl {
             environment.offset += 1;
 
             return value.list() ? value : Value();
+        } else if (function == Function::Rest) {
+            auto list = environment.variables.find(arguments[0].variable().value())->second;
+            
+            if (list.list()) {
+                auto l = list.list().value();
+
+                vector<int> retval;
+                retval.reserve(l.size() > 0 ? l.size() - 1 : 0);
+                for (int i = 1; i < l.size(); i++) {
+                    retval.push_back(l[i]);
+                }
+                return Value(retval);
+            } else {
+                return Value();
+            }
         }
+
         return Value();
     }
 

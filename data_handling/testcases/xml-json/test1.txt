@@ -1,0 +1,32 @@
+{
+  "root": {
+    "animal": {
+      "@class": "korv",
+      "@id": "1",
+      "name": "Helen",
+      "url": "http://www.facebook.com"
+    },
+    "baby": null,
+    "other": {
+      "#text": "Text",
+      "@id": "3"
+    },
+    "other2": {
+      "@id": "3"
+    },
+    "other3": "Text",
+    "person": [
+      {
+        "@class": "ko",
+        "@id": "1",
+        "name": "Alan",
+        "url": "http://www.google.com"
+      },
+      {
+        "@id": "2",
+        "name": "Finken",
+        "url": "http://www.yahoo.com"
+      }
+    ]
+  }
+}

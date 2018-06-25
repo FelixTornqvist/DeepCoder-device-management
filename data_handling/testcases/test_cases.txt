@@ -1,0 +1,153 @@
+input:
+{ 
+  root: {
+    "e1": { "#text": "text", "e1a": "text" },
+    "e2": { "e2a": ["text", "text"] },
+    "e3": { "e3a": "text", "e3b": "text" },
+    "e4": { "@name": "value", "#text": "text" },
+    "e5": { "@name": "value"},
+    "e6": "text",
+    "e7": null 
+    }
+}
+
+output:
+<root><e5 name="value" />
+<e4 name="value">text</e4>
+<e7/><e6>text</e6><e1>text<e1a>text</e1a></e1>
+<e3><e3b>text</e3b><e3a>text</e3a></e3>
+<e2><e2a>text</e2a><e2a>text</e2a></e2>
+</root>
+
+input:
+{ 
+  "bookstore": {
+    "book": {
+      "author": [
+        {
+          "_id": "1",
+          "__text": "James McGovern"
+        },
+        {
+          "_id": "2",
+          "__text": "Per Bothner"
+        },
+        "Kurt Cagle",
+        "James Linn"
+      ],
+      "title": {
+        "_lang": "en",
+        "__text": "Learning XML"
+      },
+      "year": "2003",
+      "price": "39.95"
+    },
+    "book2": {
+      "author": [
+        {
+          "_id": "1",
+          "__text": "James McGovern"
+        },
+        {
+          "_id": "2",
+          "__text": "Per Bothner"
+        },
+        "Kurt Cagle",
+        "James Linn"
+      ],
+      "title": {
+        "_lang": "en",
+        "__text": "Learning XML"
+      },
+      "year": "2003",
+      "price": "39.95"
+    },
+    "book3":null,
+    "book4":"Info"
+  }
+}
+
+ouput:
+<bookstore>
+  <book2>
+    <price>39.95</price>
+    <title lang="en">text</title>
+    <year>2003</year>
+    <author id="1">text</author>
+    <author id="2">text</author>
+    <author>Kurt Cagle</author>
+    <author>James Linn</author>
+  </book2>
+  <book>
+    <price>39.95</price>
+    <title lang="en">text</title>
+    <year>2003</year>
+    <author id="1">text</author>
+    <author id="2">text</author>
+    <author>Kurt Cagle</author>
+    <author>James Linn</author>
+  </book>
+  <book4>Info</book4>
+  <book3/>
+</bookstore>
+
+input:
+{    
+  "root": {
+    "animal": {
+      "name": "Helen",
+      "url": "http://www.facebook.com",
+      "_id": "1",
+      "_class": "korv"
+    }
+    "person": [
+      {
+        "name": "Alan",
+        "url": "http://www.google.com",
+        "_id": "1",
+        "_class": "ko"
+      },
+      {
+        "name": "Finken",
+        "url": "http://www.yahoo.com",
+        "_id": "2"
+      }
+    ],
+    "thing2": "",
+    "thing": null,
+    "thing3": {
+      "_id": ""
+    },
+    "other": {
+      "_id": "3",
+      "__text": "Text"
+    },
+    "other2": {
+      "_id": "3"
+    },
+    "other3": "Text",
+    
+  }
+}
+
+output:
+<root>
+  <animal id="1" class="korv">
+    <url>http://www.facebook.com</url>
+    <name>Helen</name>
+  </animal>
+  <person id="1" class="ko">
+    <url>http://www.google.com</url>
+    <name>Alan</name>
+  </person>
+  <person id="2">
+    <url>http://www.yahoo.com</url>
+    <name>Finken</name>
+  </person>
+  <thing2></thing2>
+  <thing3 id="" />
+  <thing/>
+  <other id="3">text</other>
+  <other2 id="3" />
+  <other3>Text</other3>
+</root>

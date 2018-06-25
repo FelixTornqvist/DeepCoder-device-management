@@ -1,5 +1,11 @@
-# `dot.json`
-Receives two list, and outputs the inner product of two list.
+# `classifyDate.json`
+Receives one list, and outputs the third element (Date in the SA).
 
-# `reverse.json`
-Receives one list, and outputs the reversed list.
+# `classifyID.json`
+Receives one list, and outputs the second element (ID in the SA).
+
+# `classifyLoc.json`
+Receives one list, and outputs the fourth element (Location in the SA).
+
+# `classifyType.json`
+Receives one list, and outputs the first element (Type in the SA).

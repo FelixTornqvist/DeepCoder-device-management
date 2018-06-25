@@ -56,6 +56,8 @@ namespace dsl {
                 return {Type::Integer, {}};
             case Function::ReadList:
                 return {Type::List, {}};
+            case Function::Rest:
+                return {Type::List, {Type::List}};
         }
     }
 

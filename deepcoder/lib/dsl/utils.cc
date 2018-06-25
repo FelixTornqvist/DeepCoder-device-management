@@ -1,5 +1,6 @@
 #include <string>
 #include <algorithm>
+#include <math.h>
 #include "dsl/utils.h"
 
 using namespace std;
@@ -41,6 +42,8 @@ namespace dsl {
                 return "read_int";
             case Function::ReadList:
                 return "read_list";
+            case Function::Rest:
+                return "rest";
         }
     }
 
@@ -118,6 +121,114 @@ namespace dsl {
         return str;
     }
 
+    Function funkify_function(const string &func) {
+        if("head" == func) {
+            return Function::Head;
+        } else if ("last" == func) {
+            return Function::Last;
+        } else if ("take" == func) {
+            return Function::Take;
+        } else if ("drop" == func) {
+            return Function::Drop;
+        } else if ("access" == func) {
+            return Function::Access;
+        } else if ("minimum" == func) {
+            return Function::Minimum;
+        } else if ("maximum" == func) {
+            return Function::Maximum;
+        } else if ("reverse" == func) {
+            return Function::Reverse;
+        } else if ("sort" == func) {
+            return Function::Sort;
+        } else if ("sum" == func) {
+            return Function::Sum;
+        } else if ("map" == func) {
+            return Function::Map;
+        } else if ("filter" == func) {
+            return Function::Filter;
+        } else if ("count" == func) {
+            return Function::Count;
+        } else if ("zip_with" == func) {
+            return Function::ZipWith;
+        } else if ("scanl1" == func) {
+            return Function::Scanl1;
+        } else if ("read_int" == func) {
+            return Function::ReadInt;
+        } else if ("read_list" == func) {
+            return Function::ReadList;
+        } else if ("rest" == func) {
+            return Function::Rest;
+        }
+    }
+
+    OneArgumentLambda funkify_oneArgumentLambda(const std::string &lambda) {
+        if ("+1" == lambda) {
+            return OneArgumentLambda::Plus1;
+        } else if ("-1" == lambda) {
+            return OneArgumentLambda::Minus1;
+        } else if ("*2" == lambda) {
+            return OneArgumentLambda::Multiply2;
+        } else if ("*3" == lambda) {
+            return OneArgumentLambda::Multiply3;
+        } else if ("*4" == lambda) {
+            return OneArgumentLambda::Multiply4;
+        } else if ("*(-1)" == lambda) {
+            return OneArgumentLambda::MultiplyMinus1;
+        } else if ("/2" == lambda) {
+            return OneArgumentLambda::Divide2;
+        } else if ("/3" == lambda) {
+            return OneArgumentLambda::Divide3;
+        } else if ("/4" == lambda) {
+            return OneArgumentLambda::Divide4;
+        } else if ("**2" == lambda) {
+            return OneArgumentLambda::Pow2;
+        }
+    }
+
+    TwoArgumentsLambda funkify_twoArgumentsLambda(const std::string &lambda) {
+        if ("+" == lambda) {
+            return TwoArgumentsLambda::Plus;
+        } else if ("-" == lambda) {
+            return TwoArgumentsLambda::Minus;
+        } else if ("*" == lambda) {
+            return TwoArgumentsLambda::Multiply;
+        } else if ("MIN" == lambda) {
+            return TwoArgumentsLambda::Min;
+        } else if ("MAX" == lambda) {
+            return TwoArgumentsLambda::Max;
+        }
+    }
+
+    PredicateLambda funkify_predicateLambda(const std::string &pred) {
+        if (">0" == pred) {
+            return PredicateLambda::IsPositive;
+        } else if ("<0" == pred) {
+            return PredicateLambda::IsNegative;
+        } else if ("%2 == 1" == pred) {
+            return PredicateLambda::IsOdd;
+        } else if ("%2 == 0" == pred) {
+            return PredicateLambda::IsEven;
+        }
+    }
+
+    // TODO: implement to fully work with stringify(Variable), or re-implement stringify(Variable),
+    // they only work the same below "aaa".
+    Variable funkify_variable(const std::string &str) {
+        string nstr = str;
+        Variable x = nstr.back() - 'a';
+        nstr.pop_back();
+        reverse(nstr.begin(), nstr.end());
+
+        int n = 1;
+        for (char c : nstr) {
+            int i = (c - 'a' + 1);
+            x += pow(26, n) * i;
+            n++;
+        }
+
+        return x;
+    }
+
     std::ostream &operator<<(std::ostream &stream, const Argument &argument) {
         if (argument.one_argument_lambda()) {
             stream << stringify(argument.one_argument_lambda().value());
@@ -183,5 +294,7 @@ namespace dsl {
 
         return stream;
     }
+
+
 
 }

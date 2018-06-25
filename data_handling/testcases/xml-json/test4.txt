@@ -1,0 +1,25 @@
+{
+  "zero": {
+    "one": {
+      "two": {
+        "three": {
+          "four": {
+            "@name": "number four",
+            "five": {
+              "#text": "Text in level five",
+              "six": {
+                "seven": {
+                  "eight": {
+                    "nine": {
+                      "ten": "Hello!"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

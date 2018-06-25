@@ -2,11 +2,12 @@
 
 using namespace dsl;
 
+//NOTE: ReadInt and ReadList has to be last in all_functions
 std::vector<Function> dsl::all_functions = {Function::Head, Function::Last, Function::Take, Function::Drop,
                                             Function::Access, Function::Minimum, Function::Maximum, Function::Reverse,
                                             Function::Sort, Function::Sum, Function::Map, Function::Filter,
-                                            Function::Count, Function::ZipWith, Function::Scanl1, Function::ReadInt,
-                                            Function::ReadList};
+                                            Function::Count, Function::ZipWith, Function::Scanl1, Function::Rest,
+                                            Function::ReadInt, Function::ReadList};
 
 std::vector<PredicateLambda> dsl::all_predicate_lambdas = {PredicateLambda::IsPositive,
                                                            PredicateLambda::IsNegative,

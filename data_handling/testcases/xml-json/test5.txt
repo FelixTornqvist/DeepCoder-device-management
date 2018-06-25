@@ -1,0 +1,57 @@
+{
+  "zero": {
+    "one": {
+      "two": {
+        "three": {
+          "four": [
+            {
+              "@name": "first number four",
+              "five": {
+                "#text": "Text in level five",
+                "six": {
+                  "seven": {
+                    "eight": {
+                      "nine": {
+                        "ten": "Hello!"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "@name": "second number four",
+              "five": {
+                "#text": "Text in level five",
+                "six": {
+                  "seven": {
+                    "eight": {
+                      "nine": {
+                        "ten": "Hello!"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "@name": "third number four",
+              "five": {
+                "#text": "Text in level five",
+                "six": {
+                  "seven": {
+                    "eight": {
+                      "nine": {
+                        "ten": "Hello!"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

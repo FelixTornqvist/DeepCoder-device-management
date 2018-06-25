@@ -98,7 +98,7 @@ integer_range = integer_max - integer_min + 1 #integerの個数
 example_num = 5
 list_length = 10
 hidden_layer_width = 256 
-attribute_width = 34
+attribute_width = 35
 
 def gen_model():
     embed = ExampleEmbed(input_num, integer_range, embed_length)

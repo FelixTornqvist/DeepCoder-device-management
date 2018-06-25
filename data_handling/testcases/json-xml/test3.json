@@ -1,0 +1,304 @@
+{
+  "root": {
+    "sub1": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub2": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub3": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub4": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub5": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub6": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub7": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub8": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub9": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    },
+    "sub10": {
+      "animal": {
+        "@class": "korv",
+        "@id": "1",
+        "name": "Helen",
+        "url": "http://www.facebook.com"
+      },
+      "baby": null,
+      "other": {
+        "#text": "Text",
+        "@id": "3"
+      },
+      "other2": {
+        "@id": "3"
+      },
+      "other3": "Text",
+      "person": [
+        {
+          "@class": "ko",
+          "@id": "1",
+          "name": "Alan",
+          "url": "http://www.google.com"
+        },
+        {
+          "@id": "2",
+          "name": "Finken",
+          "url": "http://www.yahoo.com"
+        }
+      ]
+    }
+  }
+}

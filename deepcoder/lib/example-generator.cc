@@ -415,6 +415,20 @@ experimental::optional<Constraint> analyze(const Program &p) {
                 }
             } else if (it->function == Function::ReadList) {
                 c.inputs.push_back(it->variable);
+            } else if (it->function == Function::Rest) {
+                // HOPE THAT THIS IS CORRECT
+                auto &lc2 = list_constraint(it->arguments.at(0));
+
+                for (const auto& x: lc.sign) {
+                    lc2.sign.insert(x);
+                }
+                for (const auto& x: lc.is_even) {
+                    lc2.is_even.insert(x);
+                }
+                if (lc.min_length) {
+                    lc2.min_length = max(lc.min_length.value(), lc2.min_length.value_or(0));
+                }
+
             } else {
                 cerr << "Implementation Error" << endl;
             }

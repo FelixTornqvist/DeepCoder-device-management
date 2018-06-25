@@ -8,7 +8,8 @@
 namespace dsl {
     enum class Function {
         Head, Last, Take, Drop, Access, Minimum, Maximum, Reverse, Sort, Sum,
-        Map, Filter, Count, ZipWith, Scanl1, ReadInt, ReadList
+        Map, Filter, Count, ZipWith, Scanl1, Rest, ReadInt, ReadList 
+        //NOTE: ReadInt and ReadList has to be last here
     };
     extern std::vector<Function> all_functions;
 

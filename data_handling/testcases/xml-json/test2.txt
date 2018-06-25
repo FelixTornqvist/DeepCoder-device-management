@@ -1,0 +1,206 @@
+{
+  "bookstore": {
+    "book": [
+      {
+        "@category": "cooking",
+        "author": "Giada De Laurentiis",
+        "price": "30.00",
+        "title": {
+          "#text": "Everyday Italian",
+          "@lang": "en"
+        },
+        "year": "2005"
+      },
+      {
+        "@category": "children",
+        "author": "J K. Rowling",
+        "price": "29.99",
+        "title": {
+          "#text": "Harry Potter",
+          "@lang": "en"
+        },
+        "year": "2005"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML",
+          "@lang": "en"
+        },
+        "year": "2000"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML2",
+          "@lang": "en"
+        },
+        "year": "2001"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML3",
+          "@lang": "en"
+        },
+        "year": "2002"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML4",
+          "@lang": "en"
+        },
+        "year": "2003"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML5",
+          "@lang": "en"
+        },
+        "year": "2004"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML6",
+          "@lang": "en"
+        },
+        "year": "2005"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML",
+          "@lang": "en"
+        },
+        "year": "2003"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML2",
+          "@lang": "en"
+        },
+        "year": "2004"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML3",
+          "@lang": "en"
+        },
+        "year": "2005"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML4",
+          "@lang": "en"
+        },
+        "year": "2006"
+      },
+      {
+        "@category": "web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML5",
+          "@lang": "en"
+        },
+        "year": "2007"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML",
+          "@lang": "en"
+        },
+        "year": "2000"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML2",
+          "@lang": "en"
+        },
+        "year": "2001"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML3",
+          "@lang": "en"
+        },
+        "year": "2002"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML4",
+          "@lang": "en"
+        },
+        "year": "2003"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML5",
+          "@lang": "en"
+        },
+        "year": "2004"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning HTML6",
+          "@lang": "en"
+        },
+        "year": "2005"
+      },
+      {
+        "@category": "space web",
+        "author": "Erik T. Ray",
+        "price": "39.95",
+        "title": {
+          "#text": "Learning XML",
+          "@lang": "en"
+        },
+        "year": "2003"
+      }
+    ]
+  }
+}

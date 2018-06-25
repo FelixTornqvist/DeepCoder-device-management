@@ -1,0 +1,5 @@
+ <- read_list
+b <- reverse a
+c <- rest b
+d <- head c
+

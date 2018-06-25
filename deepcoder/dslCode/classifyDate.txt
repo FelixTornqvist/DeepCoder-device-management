@@ -1,0 +1,4 @@
+a <- read_list
+b <- rest a
+c <- rest b
+d <- head c

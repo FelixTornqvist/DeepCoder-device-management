@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <book category="cooking">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+  <book category="children">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML</title>
+    <author>Erik T. Ray</author>
+    <year>2000</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML2</title>
+    <author>Erik T. Ray</author>
+    <year>2001</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML3</title>
+    <author>Erik T. Ray</author>
+    <year>2002</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML4</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML5</title>
+    <author>Erik T. Ray</author>
+    <year>2004</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning HTML6</title>
+    <author>Erik T. Ray</author>
+    <year>2005</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning XML</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning XML2</title>
+    <author>Erik T. Ray</author>
+    <year>2004</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning XML3</title>
+    <author>Erik T. Ray</author>
+    <year>2005</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning XML4</title>
+    <author>Erik T. Ray</author>
+    <year>2006</year>
+    <price>39.95</price>
+  </book>
+  <book category="web">
+    <title lang="en">Learning XML5</title>
+    <author>Erik T. Ray</author>
+    <year>2007</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML</title>
+    <author>Erik T. Ray</author>
+    <year>2000</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML2</title>
+    <author>Erik T. Ray</author>
+    <year>2001</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML3</title>
+    <author>Erik T. Ray</author>
+    <year>2002</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML4</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML5</title>
+    <author>Erik T. Ray</author>
+    <year>2004</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning HTML6</title>
+    <author>Erik T. Ray</author>
+    <year>2005</year>
+    <price>39.95</price>
+  </book>
+  <book category="space web">
+    <title lang="en">Learning XML</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+</bookstore>

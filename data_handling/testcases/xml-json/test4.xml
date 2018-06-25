@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<zero>
+  <one>
+    <two>
+      <three>
+        <four name="number four">
+          <five>Text in level five
+            <six>
+              <seven>
+                <eight>
+                  <nine>
+                    <ten>
+                      Hello!
+                    </ten>
+                  </nine>
+                </eight>
+              </seven>
+            </six>
+          </five>
+        </four>
+      </three>
+    </two>
+  </one>
+</zero>
