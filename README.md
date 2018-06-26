@@ -9,3 +9,7 @@ This local CoAP server was used for testing:
 protocol_adapter/coap_server.py 
 Borrowed from the creator of CoAPthon: 
 https://github.com/Tanganelli/CoAPthon
+
+----
+## Authors
+Annika Svedin and Felix Törnqvist
